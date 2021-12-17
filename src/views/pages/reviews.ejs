@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+<main>
+  <div class="bg-light">
+    <div class="container-fluid" style="padding: 2%; ">
+      <h4 class="text-center">Cocktail reviews</h4>
+      <form action="/reviews/filter" method="get">
+        <div class="row">
+          <div class="col-3">
+          </div>
+          <div class="col-5">
+            <input class="form-control" type="text" name="name" placeholder="Filter cocktail reviews by name">
+          </div>
+          <div class="col-1">
+            <input class="btn btn-primary" type="submit" value="Filter"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container" style="margin-top: 1rem">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Cocktail</th>
+          <th scope="col">Review</th>
+          <th scope="col">Review Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (typeof reviews != 'undefined') { %>
+          <% reviews.forEach(function (item) { %>
+            <tr>
+              <td><%= item.cocktail_title %></td>
+              <td><%= item.review %></td>
+              <td><%= item.review_date %></td>
+            </tr>
+          <% }) %>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

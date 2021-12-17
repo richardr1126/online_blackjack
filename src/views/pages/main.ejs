@@ -1,0 +1,78 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+<main>
+  <div class="bg-light">
+    <div class="container-fluid" style="padding: 2%; ">
+      <form action="/search-result" method="post">
+        <div class="row">
+          <div class="col-3">
+          </div>
+          <div class="col-5">
+            <input class="form-control" type="text" name="drinkName" placeholder="Enter cocktail name">
+          </div>
+          <div class="col-1">
+            <input class="btn btn-dark" type="submit" name="search" value="Search"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <% if (typeof drink != 'undefined') { %>
+    <div class="container mx-auto" style="margin-top: 2%">
+      <div class="row">
+        <div class="col text-right">
+          <img src="<%= drink.picture %>" height="400px" width="400px">
+        </div>
+        <div class="col text-left">
+          <h4><%= drink.name %></h4>
+          <br/>
+          <h6>Alcoholic</h6>
+          <p><%= drink.alcoholic %></p>
+          <h6>Glass type</h6>
+          <p><%= drink.glass %></p>
+          <h6>Instructions</h6>
+          <p><%= drink.instructions %></p><br/>
+          
+          <a href="#myModal"
+          class="btn btn-dark"
+          data-toggle="modal">
+          Add Review
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add review</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/submit_review" method="post">
+              
+              <label for="cocktailName" class="font-weight-bold">Cocktail Name:</label>
+              <input type="text" class="form-control" id="cocktailName" name="cocktailName" value="<%= drink.name %>" readonly>
+              <br/>
+              <label for="review" class="font-weight-bold">Enter your review here:</label>
+              <textarea class="form-control" id="review" name="review" rows="5"></textarea>
+              <br/>
+              <input class="btn btn-primary w-100" type="submit" name="submit" value="Submit Review"/>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</main>
+<%- include('../partials/footer') %>
