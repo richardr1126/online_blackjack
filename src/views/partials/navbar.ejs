@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="/home">Gamblers</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+		aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+		<ul class="navbar-nav ">
+			<li class="nav-button">
+				<a class="nav-link" href="/home">Home</a>
+			</li>
+			<li class="nav-button">
+				<a class="nav-link" href="/shop">Shop</a>
+			</li>
+			<li class="nav-button">
+				<a class="nav-link">$<%= user.currency_owned %></a>
+			</li>
+			<li class="nav-button">
+				<a class="nav-link" href="/profile">
+					<%= user.username %>
+					<img class="rounded-circle" style="margin-left: 0.5rem;" src="<%= picture_src %>" width="30" height="30">
+					
+				</a>
+			</li>
+		</ul>
+		<div class="form-inline my-2 my-lg-0" style="padding-left: 1rem;">
+			<button class="btn btn-outline-light my-2 my-sm-0">
+				<a class="text-white" href="/signout">Logout</a>
+			</button>
+		</div>
+	</div>
+</nav>

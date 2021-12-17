@@ -1,0 +1,64 @@
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+LICENSE
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Copyright by Code Boxx
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+MORE
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Please visit https://code-boxx.com/ for more! -->
+<div id="blackjack-table" style="display: none;">
+	<!-- (A) DEALER'S CARDS -->
+	<div id="deal-wrap">
+		<!-- (A1) DEALER'S POINTS + STAND -->
+		<div id="deal-data">
+			<span id="deal-stand">STAND</span>
+			Dealer's Hand - <span id="deal-points">?</span>
+		</div>
+
+		<!-- (A2) DEALER'S CARDS -->
+		<div id="deal-cards"></div>
+	</div>
+
+	<!-- (B) PLAYER'S CARDS -->
+	<div id="play-wrap">
+		<!-- (B1) PLAYERS'S POINTS + STAND -->
+		<div id="play-data">
+			<span id="play-stand">STAND</span>
+			<%= user.username %>'s Hand - <span id="play-points">0</span>
+		</div>
+
+		<!-- (B2) PLAYER'S CARDS -->
+		<div id="play-cards"></div>
+	</div>
+</div>
+
+<!-- (C) PLAY! -->
+<div id="play-control">
+	<!-- (C1) START -->
+	<input type="button" onclick="showGame()" id="playc-start" value="Play!" />
+	<!-- (C2) HIT OR STAND -->
+	<input type="button" id="playc-hit" value="Hit" />
+	<input type="button" id="playc-stand" value="Stand" />
+</div>
+<input type="hidden" id="card-color" value="<%= card_color %>">

@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Shop</title>
+	
+	<%- include('../partials/head') %>
+
+	<script src="../resources/js/my_script.js"></script>
+
+	<%- include('../partials/navbar') %>
+	<br>
+</head>
+
+
+
+<body style="background-color: <%= color_choice %>;" onload="loadShop()">
+	<div class ="container">
+		<nav class="nav flex-column">
+			<ul class="nav nav-tabs">
+				<li class="nav-item" >
+					<a class="nav-link" style="color: white;" href="#" id="featuredTab" onclick="switchShopPages('featured_Page')">Featured Items</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" style="color: white;" href="#" id="profileTab" onclick="switchShopPages('profile_Pictures')">Profile Pictures</a>
+				</li>
+				<li class="nav-item" >
+					<a class="nav-link" style="color: white;" href="#" id="gameBackgroundTab" onclick="switchShopPages('game_Background')">Game Background</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" style="color: white;" href="#" id="cardBackgroundTab" onclick="switchShopPages('card_Background')">Card Backgrounds</a>
+				</li>
+			</ul>
+		</nav>
+		<br>
+		<!-- featured tab -->
+		<div class="card-columns" id="featuredPage">
+			<!-- buy background-color template -->
+			<form action="/buy_background" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/Red.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Red Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/Red.jpg">
+						<input type="hidden" class="form-control" id="bgCOLOR" name="bgCOLOR" value="rgb(196, 0, 0)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_background" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/Orange.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Orange Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/Orange.jpg">
+						<input type="hidden" class="form-control" id="bgCOLOR" name="bgCOLOR" value="rgb(244, 166, 0)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<!-- buy card background template -->
+			<form action="/buy_card" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/BlueHeart.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Blue Card Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/BlueHeart.jpg">
+						<input type="hidden" class="form-control" id="cardColor" name="cardColor" value="rgb(85, 157, 253)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+				</div>
+			</form>
+			<!-- buy profile-picture template -->
+			<form action="/buy_profile" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/spade.jpg">
+					<div class="card-body">
+						<h5 class="card-title">Spade Profile Picture</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/spade.jpg">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_profile" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/playerProfileAceCard.jpg">
+					<div class="card-body">
+						<h5 class="card-title">Aces Profile Picture</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/playerProfileAceCard.jpg">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			
+		</div>
+		<!-- profile tab -->
+		<div class="card-columns" id="profilePicturePage">
+			<form action="/buy_profile" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/spade.jpg">
+					<div class="card-body">
+						<h5 class="card-title">Spade Profile Picture</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/spade.jpg">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_profile" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/playerProfileAceCard.jpg">
+					<div class="card-body">
+						<h5 class="card-title">Aces Profile Picture</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/playerProfileAceCard.jpg">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_profile" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/playerProfileThrownDice.jpg">
+					<div class="card-body">
+						<h5 class="card-title">Dice Profile Picture</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/playerProfileThrownDice.jpg">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+		</div>
+		<div class="card-columns" id="gameBackgroundPage">
+			<form action="/buy_background" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/Red.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Red Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/Red.jpg">
+						<input type="hidden" class="form-control" id="bgCOLOR" name="bgCOLOR" value="rgb(196, 0, 0)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+				</div>
+			</form>
+			<form action="/buy_background" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/Blue.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Blue Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/Blue.jpg">
+						<input type="hidden" class="form-control" id="bgCOLOR" name="bgCOLOR" value="rgb(85, 157, 253)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+				</div>
+			</form>
+			<form action="/buy_background" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/Purple.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Purple Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/Purple.jpg">
+						<input type="hidden" class="form-control" id="bgCOLOR" name="bgCOLOR" value="rgb(106, 0, 200)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+				</div>
+			</form>
+			<form action="/buy_background" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/Green.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Green Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/Green.jpg">
+						<input type="hidden" class="form-control" id="bgCOLOR" name="bgCOLOR" value="rgb(0, 244, 140)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+				</div>
+			</form>
+			<form action="/buy_background" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/Orange.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Orange Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/Orange.jpg">
+						<input type="hidden" class="form-control" id="bgCOLOR" name="bgCOLOR" value="rgb(244, 166, 0 )">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+				</div>
+			</form>
+			<form action="/buy_background" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/Grey.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Light Grey Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/Grey.jpg">
+						<input type="hidden" class="form-control" id="bgCOLOR" name="bgCOLOR" value="rgb(149, 165, 166)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- card background tab -->
+		<div class="card-columns" id="cardBackgroundPage">
+			<form action="/buy_card" method="post">
+				<div class="card max-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/RedHeart.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Red Card Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/RedHeart.jpg">
+						<input type="hidden" class="form-control" id="cardColor" name="cardColor" value="rgb(196, 0, 0)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_card" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/BlueHeart.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Blue Card Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/BlueHeart.jpg">
+						<input type="hidden" class="form-control" id="cardColor" name="cardColor" value="rgb(85, 157, 253)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_card" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/PurpleHeart.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Purple Card Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/PurpleHeart.jpg">
+						<input type="hidden" class="form-control" id="cardColor" name="cardColor" value="rgb(106, 0, 200)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_card" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/GreenHeart.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Green Card Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/GreenHeart.jpg">
+						<input type="hidden" class="form-control" id="cardColor" name="cardColor" value="rgb(0, 244, 140)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_card" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/OrangeHeart.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Orange Card Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/OrangeHeart.jpg">
+						<input type="hidden" class="form-control" id="cardColor" name="cardColor" value="rgb(244, 166, 0 )">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			<form action="/buy_card" method="post">
+				<div class="card mx-auto border-primary text-white bg-dark">
+					<img class="card-img-top" src="../../resources/images/GreyHeart.jpg" alt="Featured Store Item">
+					<div class="card-body">
+						<h5 class="card-title">Orange Card Background</h5>
+						<p class="card-text">Cost: $10</p>
+						<input type="hidden" class="form-control" id="picture_src" name="picture_src" value="../../resources/images/GreyHeart.jpg">
+						<input type="hidden" class="form-control" id="cardColor" name="cardColor" value="rgb(149, 165, 166)">
+						<button class="btn btn-primary" onclick="this.form.submit()">Buy</a>
+					</div>
+
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</body>
+</html>

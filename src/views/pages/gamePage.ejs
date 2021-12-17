@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Gamblers</title>
+
+	<%- include('../partials/head') %>
+	
+	<link rel="stylesheet" type="text/css" href="../resources/css/blackjack.css" />
+	<script src="../resources/js/blackjack.js"></script>
+	  
+	<%- include('../partials/navbar') %>
+	
+	
+
+
+</head>
+
+<!-- comments-->
+<body style="background-color: <%= color_choice %>;">
+	<div class="container" style="margin-top: 1rem;">
+		<div
+			class="card mx-auto border-primary bg-dark"
+			style="border-width: 0.25rem; border-radius: 1rem; max-width: 90%;">
+			<div class="card-header text-white"><strong>Blackjack</strong></div>
+			<div class="card-body">
+				<%- include('../partials/blackjack') %>
+			</div>
+		</div>
+	</div>
+	<form action="/finishedgame" method="post" id="winnerForm">
+		<input type="hidden" class="form-control" id="winner" name="winner">
+	</form>
+	<form action="/bet" method="post">
+		<div class="container" style="margin-top: 1rem;">
+			<div class="card mx-auto border-primary text-white bg-dark"
+				style="border-width: 0.25rem; border-radius: 1rem; max-width: 50%;">
+				<div class="card-header"><strong>Place a bet</strong></div>
+				<div class="card-body">
+					<div class="form-group">
+						<label class="text-white" for="bet_amount">Amount: </label>
+						<input type="number" name="bet_amount" class="form-control" id="bet_amount" placeholder="Currency to bet">
+					</div>
+					<button type="submit" id="bet_btn" class="btn btn-primary" onclick="this.form.submit();">Place bet</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	
+</body>
+
+</html>

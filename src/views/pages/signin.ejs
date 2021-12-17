@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Gamblers login</title>
+
+  <%- include('../partials/head') %>
+  
+  <script src="../resources/js/my_script.js"></script>
+
+  <div class="container text-center" style="margin-top: 1rem; color: whitesmoke;">
+    <h1>
+      Gamblers!
+    </h1>
+  </div>
+
+</head>
+
+<body style="background-color:rgb(29, 28, 36);">
+  <div class="container" style="margin-top: 1rem;">
+    <div class="card mx-auto border-primary text-white bg-dark"
+      style="border-width: 0.25rem; border-radius: 1rem; max-width: 90%;">
+      <img
+        src="https://www.liveabout.com/thmb/sYvkVxQgjGH44vxcDTjUR04LN1c=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/blackjack-table-155357505-5c46b30346e0fb0001f56ec3.jpg"
+        class="card-img-top" style="border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+      <div class="card-header"><strong>Sign in to your Gamblers account.</strong></div>
+
+      <div class="card-body">
+        <form action="/signin" method="post">
+          <div class="form-group">
+              <label class="text-white" for="signinEmail">Email address:</label>
+              <input type="email" name="email" class="form-control" id="signinEmail" placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label class="text-white" for="signinPassword">Password:</label>
+            <input type="password" name="password" class="form-control" id="signinPassword" placeholder="Enter your password">
+          </div>
+          <div class="form-group">
+            <p>Dont have an account yet? <a href="/signup"><strong class="text-primary text-uppercase">Register Here</strong></a></p>
+          </div>
+          <button type="submit" class="btn btn-primary" onclick="this.form.submit()">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

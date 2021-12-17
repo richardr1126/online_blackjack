@@ -8,7 +8,7 @@ services:
     env_file: .env
     volumes:
       - ./db/init_data:/docker-entrypoint-initdb.d
-      - reviews:/var/lib/postgresql/data  
+      - blackjack_db:/var/lib/postgresql/data  
 
   web:
     build: 
@@ -26,4 +26,4 @@ services:
     
 
 volumes:
-  reviews: {}
+  blackjack_db: {}
