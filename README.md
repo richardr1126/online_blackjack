@@ -1,4 +1,4 @@
-﻿# Welcome to Blackjack-Gamblers!
+[# Welcome to Blackjack-Gamblers!](https://blackjack-gamblers.herokuapp.com/)
 
 Please vist our [**website**](https://blackjack-gamblers.herokuapp.com/) to play!!
  - Create an account and **login**, you will start with $100
